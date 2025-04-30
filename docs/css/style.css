@@ -662,6 +662,7 @@ body {
     padding: 15px 120px;
     margin-top: 30px;
     cursor: pointer;
+    color: #172A3F;
 }
 
 .services_div input:hover {
@@ -814,6 +815,7 @@ body {
     font-weight: 400;
     font-size: 22px;
     cursor: pointer;
+    color: #172A3F;
 }
 
 .switching input:hover {
@@ -1131,6 +1133,7 @@ body {
     font-weight: 400;
     line-height: 32px;
     cursor: pointer;
+    color: #172A3F;
 }
 
 .revievs_buttons input:hover {
