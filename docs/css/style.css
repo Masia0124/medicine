@@ -307,8 +307,6 @@ body {
     padding-left: 10px;
 }
 
-.mobile-nav {}
-
 .menu-li_mobile {
     list-style: none;
     text-align: center;
@@ -611,7 +609,7 @@ body {
     background-size: cover;
     position: relative;
     text-align: start;
-   max-width: 410px;
+    max-width: 410px;
 }
 
 .services_types div>img {
@@ -1034,7 +1032,7 @@ body {
 
 .revievs_slider {
     position: relative;
-    width: 1250px;
+    width: 1750px;
     overflow-x: clip;
     /* overflow-y: hidden; */
 }
@@ -1042,6 +1040,8 @@ body {
 .revievs_slider-absolute {
     position: absolute;
     transform: translateY(-69px);
+    left: 0;
+    transition: 1s;
 }
 
 .revievs_slider-absolute>div {

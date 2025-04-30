@@ -10,10 +10,19 @@ var back_city = document.getElementById("back_city");
 var close_city = document.getElementById("close_city");
 var city_mobile_button = document.getElementById("city-mobile-button");
 
+const slider = document.getElementById("revievs_slider");
+const nextBtn = document.getElementById("next01");
+const prevBtn = document.getElementById("prev01");
+
+const cardWidth = document.querySelector(".reviews_tekst").offsetWidth;
+
+var review_index = 0;
+var offset = 0;
+
+
 item_itemArray = Array.from(item_item);
 item_itemArray.forEach((element, index) => {
     element.addEventListener('click', () => {
-        // alert('Item ' + index + ' clicked');
         var left_value = index * 454;
         slider_item.style.left = "-" + left_value + 'px';
     })
@@ -43,3 +52,19 @@ close_city.addEventListener('click', () => {
     nav_mobile_content.classList.remove('nav-mobile-inner__content-active')
     nav_mobile.classList.remove('nav-mobile__active')
 })
+
+nextBtn.addEventListener("click", () => {
+    review_index += 1;
+    offset = cardWidth * review_index;
+    console.log('Review Index (Індекс активної карточки): ' + review_index);
+    console.log('offset (Зміщення, яке ми вираховуємо як індекс помножити на ширину одного відгуку): ' + offset);
+  slider.style.left = offset + 'px';
+});
+
+prevBtn.addEventListener("click", () => {
+    review_index -= 1;
+    offset = cardWidth * review_index;
+    console.log('Review Index (Індекс активної карточки): ' + review_index);
+    console.log('offset (Зміщення, яке ми вираховуємо як індекс помножити на ширину одного відгуку): ' + offset);
+  slider.style.left = offset + 'px';
+});
