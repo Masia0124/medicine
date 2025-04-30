@@ -23,6 +23,14 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'IBM Plex Sans Condensed';
+    src: local('IBM Plex Sans Condensed');
+    src: url(../font/IBMPlexSansCondensed-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
 html,
 body {
     overflow-x: hidden;
@@ -603,6 +611,7 @@ body {
     background-size: cover;
     position: relative;
     text-align: start;
+   max-width: 410px;
 }
 
 .services_types div>img {
@@ -636,6 +645,7 @@ body {
     color: #172A3F;
     opacity: 50%;
     padding-left: 10px;
+    max-width: 306px;
 }
 
 .services_types div a {
@@ -653,6 +663,11 @@ body {
     border-radius: 100px;
     padding: 15px 120px;
     margin-top: 30px;
+    cursor: pointer;
+}
+
+.services_div input:hover {
+    color: #FF7893;
 }
 
 /* Slider*/
@@ -800,6 +815,11 @@ body {
     padding: 15px 80px;
     font-weight: 400;
     font-size: 22px;
+    cursor: pointer;
+}
+
+.switching input:hover {
+    color: #FF7893;
 }
 
 .switching ul {
@@ -968,6 +988,10 @@ body {
     cursor: pointer;
 }
 
+.doctors_batton input:hover {
+    color: #FF7893;
+}
+
 .doctors div:nth-last-child() {
     text-align: center;
 }
@@ -1106,6 +1130,11 @@ body {
     font-size: 22px;
     font-weight: 400;
     line-height: 32px;
+    cursor: pointer;
+}
+
+.revievs_buttons input:hover {
+    color: #FF7893;
 }
 
 .revievs_buttons a {
@@ -1160,12 +1189,15 @@ body {
     padding: 0;
     display: flex;
     width: 100%;
-
 }
 
 .menu_footer li a {
     text-decoration: none;
     color: inherit;
+}
+
+.menu_footer ul li a:hover {
+    color: #FF7893;
 }
 
 .menu_footer li {
@@ -1189,9 +1221,9 @@ body {
 
 }
 
-.footer_botom {}
-
-
+.footer {
+    margin-bottom: 40px;
+}
 
 .grit-colomn {
     display: grid;
@@ -1210,10 +1242,11 @@ body {
 }
 
 .grit-colomn div:nth-child(1) h5 {
-    font-size: 37px;
+    font-size: 42px;
     font-weight: 400;
     line-height: 35px;
-    margin: 32px 0;
+    margin: 30px 0;
+    font-family: "IBM Plex Sans Condensed";
 }
 
 .grit-colomn div h5 {
@@ -1586,9 +1619,9 @@ body {
         padding-top: 20px;
     }
 
-        .media_botomn {
-            flex-direction: column-reverse;
-        }
+    .media_botomn {
+        flex-direction: column-reverse;
+    }
 }
 
 
@@ -1733,6 +1766,10 @@ body {
 
     .slider_text div> :nth-child(2) {
         font-size: 16px !important;
+    }
+
+    .services_types div {
+        max-width: 306px;
     }
 
     .services_div>div:nth-child(1) {
