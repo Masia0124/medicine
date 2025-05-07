@@ -1041,9 +1041,13 @@ body {
 
 .revievs_slider-absolute {
     position: absolute;
-    transform: translateY(-69px);
+    transform: translateY(-75px);
     left: 0;
     transition: 1s;
+}
+
+.revievs_slider-active p {
+    opacity: 1 !important;
 }
 
 .revievs_slider-absolute>div {
@@ -1052,18 +1056,19 @@ body {
     height: 244px;
 }
 
-.revievs_slider-absolute div div p {
-    color: #455565;
-    font-size: 14px;
+.revievs_slider_active div div p {
+    color: #172A3F;
+    opacity: 50%;
 }
 
-.revievs_slider-absolute>div>p {
+.revievs_slider_active>div>p {
     font-size: 20px;
     font-weight: 400;
     line-height: 30px;
+    opacity: 50%;
 }
 
-.revievs_slider-absolute div input {
+.revievs_slider_active div input {
     background-color: inherit;
     border: none;
     color: #747F8C;

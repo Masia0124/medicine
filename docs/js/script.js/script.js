@@ -19,6 +19,8 @@ const cardWidth = document.querySelector(".reviews_tekst").offsetWidth;
 var review_index = 0;
 var offset = 0;
 
+var reviews_tekst = document.getElementsByClassName('reviews_tekst');
+var reviev_slider_ul = document.getElementsByClassName('reviev_slider_ulactive');
 
 item_itemArray = Array.from(item_item);
 item_itemArray.forEach((element, index) => {
@@ -27,6 +29,14 @@ item_itemArray.forEach((element, index) => {
         slider_item.style.left = "-" + left_value + 'px';
     })
 });
+
+item_itemArray.forEach(element => {
+    element.addEventListener('click', () => {
+        item_itemArray.forEach(element => element.classList.remove('switching-active'));
+
+        element.classList.add('switching-active');
+    })
+} )
   
 nav_button_block.addEventListener('click', () => {
     nav_mobile_content.classList.add('nav-mobile-inner__content-active')
@@ -54,17 +64,41 @@ close_city.addEventListener('click', () => {
 })
 
 nextBtn.addEventListener("click", () => {
+    reviews_tekst[review_index * -1].classList.remove('revievs_slider-active')
+    reviev_slider_ul[review_index * -1].classList.remove('revievs_slider-ul_active')
     review_index += 1;
+
+    if (review_index > 0) {
+        review_index = '-' + reviews_tekst.length
+        review_index++
+    }
+
     offset = cardWidth * review_index;
     console.log('Review Index (Індекс активної карточки): ' + review_index);
     console.log('offset (Зміщення, яке ми вираховуємо як індекс помножити на ширину одного відгуку): ' + offset);
-  slider.style.left = offset + 'px';
+    slider.style.left = offset + 'px';
+    reviews_tekst[review_index * -1].classList.add('revievs_slider-active')
+    console.log(reviews_tekst.length)
+    reviev_slider_ul[review_index * -1].classList.add('revievs_slider-ul_active')
 });
 
 prevBtn.addEventListener("click", () => {
+    reviews_tekst[review_index * -1].classList.remove('revievs_slider-active')
+     reviev_slider_ul[review_index * -1].classList.remove('revievs_slider-ul_active')
     review_index -= 1;
+    console.log(review_index)
+    var reviews_tekst_length = reviews_tekst.length
+    reviews_tekst_length--;
+    //review_index_log = 
+    if (review_index*-1 > reviews_tekst_length) {
+        
+        review_index = 0;
+    }
     offset = cardWidth * review_index;
     console.log('Review Index (Індекс активної карточки): ' + review_index);
     console.log('offset (Зміщення, яке ми вираховуємо як індекс помножити на ширину одного відгуку): ' + offset);
-  slider.style.left = offset + 'px';
+    slider.style.left = offset + 'px';
+    reviews_tekst[review_index * -1].classList.add('revievs_slider-active')
+    reviev_slider_ul[review_index * -1].classList.add('revievs_slider-ul_active')
 });
+
